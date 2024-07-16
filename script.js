@@ -2,71 +2,71 @@
 
 document.addEventListener("DOMContentLoaded", function () {
   const mainTitle = document.getElementById("main-title")
- 
-const List = document.getElementById("focus list");
-const todoAlert = document.getElementById("Alert");
-   
-  const itemList = document.getElementById("next item-list");
-  
+
+  const List = document.getElementById("focus-list");
+  const focusAlert = document.getElementById("Alert");
+  const itemList = document.getElementById("next-item-list");
   const newItemButton = document.getElementById("new-item-button");
-//to change parent element style
-  function UpdateToDoItems(e) {
+
+  //to change parent element style
+  function UpdateListItems(e) {
     if (
-    document.parentElement.parentElement.querySelector("div").style.textDecoration ===
+      document.parentElement.parentElement.querySelector("div").style.textDecoration ===
       ""
     ) {
-     listValue.value =
-      document.parentElement.parentElement.querySelector("div").innerText;
+      divElement.style.textDecoration = "line-through";
+      focusListValue.value =
+        document.parentElement.parentElement.querySelector("div").innerText;
       updateText = document.parentElement.parentElement.querySelector("div");
       addUpdate.setAttribute("onclick", "UpdateOnSelectionItems()");
-      listValue.focus();
+      focusListValue.focus();
     }
   }
-  
+
   function UpdateOnSelectedlistItems() {
     let IsPresent = false;
-    list.forEach((element) => {
+    focusList.forEach((element) => {
       if (element.item == listValue.value) {
         IsPresent = true;
       }
     });
-  
 
-    list.forEach((element) => {
+
+    focusList.forEach((element) => {
       if (element.item == updateText.innerText.trim()) {
         element.item = listValue.value;
       }
     });
-    
+
 
   }
 
   function list(assignments) {
     if (e.parentElement.querySelector("div").style.textDecoration === "") {
-    document.parentElement.querySelector("div").style.textDecoration = "cross";
+      document.parentElement.querySelector("div").style.textDecoration = "cross";
 
-  
-     list.forEach((element) => {
+
+      focusList.forEach((element) => {
         if (
-        document.parentElement.querySelector("div").innerText.trim() == element.item
+          document.parentElement.querySelector("div").innerText.trim() == element.item
         ) {
           element.status = true;
         }
       });
-  
+
     }
-  
-  
-  
-    
 
 
-  ;
-//Purpose: This line adds another event listener to the mainTitle element.
-//
-  mainTitle.addEventListener("mouseout", function () {
-    
+
+
+
+
+    ;
+    //Purpose: This line adds another event listener to the mainTitle element.
+    //
+    mainTitle.addEventListener("mouseout", function () {
+
       mainTitle.style.color = "white";
-  })
+    })
 
-  
+
